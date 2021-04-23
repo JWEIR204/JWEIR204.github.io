@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>COVID-19 UK</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+<script src="java.js"></script>
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+</head>
+
+<body id="UKbody">
+
+<div class = "name">
+<h1><a href="index.html">COVID19.com</a></h1>
+</div>
+
+
+<div class = "navbar">
+<div class="navbar-centered">
+  <a href="index.html">Home</a>
+  <a href="covid19.html">COVID-19</a>
+  <a class = "active" href="ukCases.html">UK Cases</a>
+  <a href="worldCases.html">World Cases</a>
+  <a href="aboutUs.html">About Us</a>
+</div>
+</div>
+<div class="parallax"></div>
+
+<button class="collapsible">UK Data</button>
+<div class="content">
+	<h2 style="text-align: center;">United Kingdom</h2>
+
+	<div class="chartSec1">
+		<canvas id="UKNewCasesChart"></canvas><canvas id="UKDeathChart"></canvas>
+	</div>
+
+	<div class="chartSec2">
+		<canvas id="UKHospitalChart"></canvas><canvas id="UKVaccineChart"></canvas>
+	</div>
+
+	<table id="dataTable">
+		<tbody id="ukTableBody">
+
+		</tbody>
+	</table>
+</div>
+
+<button class="collapsible">Scotland Data</button>
+<div class="content">
+	<h2 style="text-align: center;">Scotland</h2>
+
+	<div class="chartSec1">
+		<canvas id="scoNewCasesChart"></canvas><canvas id="scoDeathChart"></canvas>
+	</div>
+
+	<div class="chartSec2">
+		<canvas id="scoHospitalChart"></canvas><canvas id="scoVaccineChart"></canvas>
+	</div>
+
+	<table id="dataTable">
+		<tbody id="scoTableBody">
+
+		</tbody>
+	</table>
+</div>
+
+<button class="collapsible">England Data</button>
+<div class="content">
+	<h2 style="text-align: center;">England</h2>
+
+	<div class="chartSec1">
+		<canvas id="engNewCasesChart"></canvas><canvas id="engDeathChart"></canvas>
+	</div>
+
+	<div class="chartSec2">
+		<canvas id="engHospitalChart"></canvas><canvas id="engVaccineChart"></canvas>
+	</div>
+
+	<table id="dataTable">
+		<tbody id="engTableBody">
+
+		</tbody>
+	</table>
+</div>
+
+<button class="collapsible">Wales Data</button>
+<div class="content">
+	<h2 style="text-align: center;">Wales</h2>
+
+	<div class="chartSec1">
+		<canvas id="walNewCasesChart"></canvas><canvas id="walDeathChart"></canvas>
+	</div>
+
+	<div class="chartSec2">
+		<canvas id="walHospitalChart"></canvas><canvas id="walVaccineChart"></canvas>
+	</div>
+
+	<table id="dataTable">
+		<tbody id="walTableBody">
+
+		</tbody>
+	</table>
+</div>
+
+<button class="collapsible">Northern Ireland Data</button>
+<div class="content">
+	<h2 style="text-align: center;">Northern Ireland</h2>
+
+	<div class="chartSec1">
+		<canvas id="niNewCasesChart"></canvas><canvas id="niDeathChart"></canvas>
+	</div>
+
+	<div class="chartSec2">
+		<canvas id="niHospitalChart"></canvas><canvas id="niVaccineChart"></canvas>
+	</div>
+
+	<table id="dataTable">
+		<tbody id="niTableBody">
+
+		</tbody>
+	</table>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+</body>
+</html> 
